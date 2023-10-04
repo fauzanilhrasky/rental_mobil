@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1084782662457",
+    "project_id": "onicars-4ada2",
+    "storage_bucket": "onicars-4ada2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084782662457:android:6ea3f0293c6c391436cee8",
+        "android_client_info": {
+          "package_name": "com.example.project_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzpwZDvc1_m_dJZt684NqqAUNJydbpaXs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -30,11 +30,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  firebase_core: ^2.16.0
+  cloud_firestore: ^4.8.2
+  firebase_auth: ^4.6.3
+  firebase_storage: ^11.2.4
 
 dev_dependencies:
   flutter_test:
@@ -52,16 +52,29 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+
+  assets:
+    #semua
+    - images/Logo-Onicars.png
+    - images/camry.png
+    - images/Sedan-Car-PNG.png
+    - images/Hyundai-Tucson.png
+    - images/alphard.png
+    - images/suzuki XL7.png
+    #SUV
+    - images/SUV/avanza.png
+    - images/SUV/xpander.png
+    - images/SUV/rush.png
+    #SEDAN
+    - images/sedan/evo lancer.png
+    #Logo Onicars
+    - images/logo onicars.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

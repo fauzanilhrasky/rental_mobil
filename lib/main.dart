@@ -1,87 +1,22 @@
 import 'package:flutter/material.dart';
-import 'login_page.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:project_1/screens/welcome_screen.dart';
+import 'firebase_options.dart';
 
-void main() {
-  runApp(RentalApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  runApp(const MyApp());
 }
 
-class RentalApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: RentalHomePage(),
-    );
-  }
-}
-
-class RentalHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('OniCars'),
-        backgroundColor: Color.fromARGB(255, 142, 33, 243),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SizedBox(height: 20),
-          Text(
-            'Nikmati Perjalanan Anda dengan Aman dan Nyaman!',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(height: 30),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => LoginPage()),
-              );
-            },
-            style: ElevatedButton.styleFrom(
-              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
-            ),
-            child: Text(
-              'Masuk',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-              ),
-            ),
-          ),
-          SizedBox(height: 20),
-          TextButton(
-            onPressed: () {
-              // Tambahkan fungsi untuk tombol daftar sekarang di sini
-            },
-            child: Text(
-              'Daftar Sekarang',
-              style: TextStyle(
-                color: Color.fromARGB(255, 142, 33, 243),
-                fontSize: 16,
-              ),
-            ),
-          ),
-        ],
-      ),
-      bottomNavigationBar: Container(
-        padding: EdgeInsets.all(16),
-        color: Color.fromARGB(255, 142, 33, 243),
-        child: Text(
-          'Dapatkan diskon 20% untuk pemesanan pertama!',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 16,
-          ),
-          textAlign: TextAlign.center,
-        ),
-      ),
+      home: const WelcomeScreen(),
     );
   }
 }
