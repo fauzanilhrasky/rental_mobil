@@ -7,8 +7,8 @@ void main() {
 }
 
 class LoginApp extends StatelessWidget {
-  const LoginApp({Key? key})
-      : super(key: key); // Perbaiki deklarasi constructor
+  const LoginApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -41,11 +41,9 @@ class _LoginPageState extends State<LoginPage> {
       );
       if (userCredential.user != null) {
         Navigator.pushReplacement(
-          // Menggunakan pushReplacement agar tidak bisa kembali ke halaman login
           context,
           MaterialPageRoute(
-            builder: (context) =>
-                DashboardScreen(), // Menggunakan DashboardPage() bukan DashboardApp()
+            builder: (context) => DashboardScreen(),
           ),
         );
         print("User logged in: ${userCredential.user!.email}");
@@ -70,6 +68,14 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Text(
+                  "ONICARS", // Tambahkan teks "Welcome" di atas kotak email
+                  style: TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 100),
                 TextFormField(
                   controller: _emailController,
                   keyboardType: TextInputType.emailAddress,
@@ -112,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
                     });
                   },
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 20,
                 ),
                 SizedBox(

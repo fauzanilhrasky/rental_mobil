@@ -44,7 +44,7 @@ class Detailatas extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (BuildContext context) => DashboardApp(),
+                          builder: (BuildContext context) => DashboardScreen(),
                         ),
                       );
                     },
